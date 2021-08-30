@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import HeaderComponent from "./components/HeaderComponent";
 import TaskListComponent from "./components/TaskListComponent";
+import TaskShowComponent from "./components/TaskShowComponent";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -43,9 +44,15 @@ Vue.component('header-component', HeaderComponent);
 			 component: TaskListComponent,
 			 name : "task.list",
 		 },
+		 {
+			path : "/tasks/:taskId",
+			component: TaskShowComponent,
+			name : "task.show",
+			props: true,
+		},
 	 ]
  });
- 
+
 const app = new Vue({
     el: '#app',
 	router,
