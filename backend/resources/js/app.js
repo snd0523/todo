@@ -4,6 +4,7 @@ import HeaderComponent from "./components/HeaderComponent";
 import TaskListComponent from "./components/TaskListComponent";
 import TaskShowComponent from "./components/TaskShowComponent";
 import TaskCreateComponent from "./components/TaskCreateComponent";
+import TaskEditComponent from "./components/TaskEditComponent";
 
 /**
  * First we will load all of this project's JavaScript dependencies which
@@ -54,6 +55,12 @@ Vue.component('header-component', HeaderComponent);
 			path : "/tasks/:taskId",
 			component: TaskShowComponent,
 			name : "task.show",
+			props: true,
+		},
+		{
+			path : "/tasks/:taskId/edit",
+			component: TaskEditComponent,
+			name : "task.edit",
 			props: true,
 		},
 	 ]
